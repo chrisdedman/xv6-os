@@ -33,9 +33,14 @@ static void printint(int xx, int base, int sign)
   uint x;
 
   if (sign && (sign = xx < 0))
+  {
     x = -xx;
+  }
+
   else
+  {
     x = xx;
+  }
 
   i = 0;
   do
@@ -44,10 +49,14 @@ static void printint(int xx, int base, int sign)
   } while ((x /= base) != 0);
 
   if (sign)
+  {
     buf[i++] = '-';
+  }
 
   while (--i >= 0)
+  {
     consputc(buf[i]);
+  }
 }
 
 // Print to the console. only understands %d, %x, %p, %s.
@@ -166,7 +175,9 @@ static void cgaputc(int c)
   else if (c == BACKSPACE)
   {
     if (pos > 0)
+    {
       --pos;
+    }
   }
 
   else
