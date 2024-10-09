@@ -133,10 +133,12 @@ int exec(char *path, char **argv)
 
   // Save program name for debugging.
   for (last = s = path; *s; s++)
+  {
     if (*s == '/')
     {
       last = s + 1;
     }
+  }
   safestrcpy(curproc->name, last, sizeof(curproc->name));
 
   // Commit to the user image.
